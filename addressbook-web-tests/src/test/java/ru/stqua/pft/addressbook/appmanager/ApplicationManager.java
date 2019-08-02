@@ -1,35 +1,27 @@
-package ru.stqua.pft.addressbook;
+package ru.stqua.pft.addressbook.appmanager;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import ru.stqua.pft.addressbook.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.fail;
-
-public class TestBase {
+public class ApplicationManager {
   public WebDriver driver;
-  private String baseUrl;
   public boolean acceptNextAlert = true;
   public StringBuffer verificationErrors = new StringBuffer();
+  private String baseUrl;
 
-  @BeforeClass(alwaysRun = true)
-  public void setUp() throws Exception {
+  public void init() {
     System.setProperty("webdriver.gecko.driver","C:\\Tools\\geckodriver\\geckodriver.exe");
-
-
     driver = new FirefoxDriver();
-
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     driver.get("http://localhost/addressbook/group.php");
     login("admin", "secret");
-
-
   }
 
-  private void login(String username, String password) {
+  public void login(String username, String password) {
     driver.findElement(By.name("user")).clear();
     driver.findElement(By.name("user")).sendKeys(username);
     driver.findElement(By.name("pass")).clear();
@@ -37,11 +29,11 @@ public class TestBase {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Password:'])[1]/following::input[2]")).click();
   }
 
-  protected void submitGroupCreation() {
+  public void submitGroupCreation() {
     driver.findElement(By.name("submit")).click();
   }
 
-  protected void fillGroupForm(GroupData groupData) {
+  public void fillGroupForm(GroupData groupData) {
     driver.findElement(By.name("group_name")).click();
     driver.findElement(By.name("group_name")).clear();
     driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
@@ -59,37 +51,27 @@ public class TestBase {
     driver.findElement(By.name("group_footer")).click();
   }
 
-  protected void initGroupCreation() {
+  public void initGroupCreation() {
     driver.findElement(By.name("new")).click();
   }
 
-  protected void gotoGroupPage() {
+  public void gotoGroupPage() {
     driver.findElement(By.linkText("groups")).click();
   }
 
-  protected void deleteGroup() {
+  public void deleteGroup() {
     driver.findElement(By.name("delete")).click();
   }
 
-  protected void selectGroup() {
+  public void selectGroup() {
     driver.findElement(By.name("selected[]")).click();
   }
 
-  protected void returnToGroupPage() {
+  public void returnToGroupPage() {
     driver.findElement(By.linkText("groups")).click();
   }
 
-  @AfterClass(alwaysRun = true)
-  public void tearDown() throws Exception {
-    gotoGroupPage();
-
+  public void stop() {
     driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
   }
-
-
-
 }
