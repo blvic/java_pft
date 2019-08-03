@@ -14,6 +14,8 @@ public class ApplicationManager {
   public StringBuffer verificationErrors = new StringBuffer();
   private String baseUrl;
 
+
+
   public void init() {
     System.setProperty("webdriver.gecko.driver","C:\\Tools\\geckodriver\\geckodriver.exe");
    driver = new FirefoxDriver();
