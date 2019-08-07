@@ -3,6 +3,7 @@ package ru.stqua.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqua.pft.addressbook.model.ContactData;
+import ru.stqua.pft.addressbook.model.PhoneContactData;
 
 public class ContactHelper extends HelperBase {
   public ContactHelper(WebDriver driver) {
@@ -24,6 +25,13 @@ public class ContactHelper extends HelperBase {
     type(By.name("title"), contactData.getTitle());
     type(By.name("company"), contactData.getCompany());
     type(By.name("address"), contactData.getAddress());
+    //fillPhonedata(contactData);
+  }
 
+  public void fillPhonedata(PhoneContactData phoneContactData) {
+    type(By.name("home"), phoneContactData.getHome_telephone());
+    type(By.name("mobile"), phoneContactData.getMobile_phone());
+    type(By.name("work"), phoneContactData.getWork_phone());
+    type(By.name("fax"), phoneContactData.getFax());
   }
 }

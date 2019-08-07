@@ -10,11 +10,15 @@ public class ContactData {
   private final String title;
   private final String company;
   private final String address;
+ // private final PhoneContactData phoneContactData;
 
 
-
-  public ContactData(String last_name, String midlle_name,String first_name ,
-                     String nick_name, String title, String company, String address) {
+  public ContactData(String last_name, String midlle_name,String first_name ,String nick_name,
+                     String title, String company, String address
+                  //   String home_telephone, String mobile_phone, String work_phone, String fax
+                    )
+  {
+    //phoneContactData = new PhoneContactData(home_telephone, mobile_phone, work_phone, fax);
 
     this.first_name = first_name;
     this.midlle_name = midlle_name;
@@ -25,6 +29,7 @@ public class ContactData {
     this.address = address;
 
   }
+
 
   public String getFirst_name() {
     return first_name;
@@ -48,4 +53,6 @@ public class ContactData {
   public String getAddress() {
     return address;
   }
+
+
 }
