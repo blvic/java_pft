@@ -34,4 +34,16 @@ public class ContactHelper extends HelperBase {
     type(By.name("work"), phoneContactData.getWork_phone());
     type(By.name("fax"), phoneContactData.getFax());
   }
+
+  public void goToHomePage() {
+    click(By.linkText("home"));
+  }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteContact() {
+    click(By.name("Delete"));
+  }
 }
