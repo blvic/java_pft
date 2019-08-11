@@ -5,7 +5,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
-  protected WebDriver driver;
+  public WebDriver driver;
 
   public HelperBase(WebDriver driver) {
     this.driver = driver;
@@ -24,6 +24,15 @@ public class HelperBase {
   public  boolean isAllertPresent () {
     try {
       driver.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
+  }
+
+  public  boolean acceptAllert () {
+    try {
+      driver.switchTo().alert().accept();
       return true;
     } catch (NoAlertPresentException e) {
       return false;

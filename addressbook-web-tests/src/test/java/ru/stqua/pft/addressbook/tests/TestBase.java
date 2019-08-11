@@ -6,7 +6,7 @@ import ru.stqua.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-  protected final ApplicationManager app = new ApplicationManager();
+  public ApplicationManager app = new ApplicationManager();
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {

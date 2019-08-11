@@ -44,6 +44,8 @@ public class ContactHelper extends HelperBase {
   }
 
   public void deleteContact() {
-    click(By.name("Delete"));
+    //click(By.name("Delete"));
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Select all'])[1]/following::input[2]")).click();
   }
+  //
 }
