@@ -48,4 +48,9 @@ public class ContactHelper extends HelperBase {
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Select all'])[1]/following::input[2]")).click();
   }
   //
+
+  public void initContactModification() {
+    driver.findElement(By.cssSelector(".center:nth-child(8) img")).click();
+  }
+
 }

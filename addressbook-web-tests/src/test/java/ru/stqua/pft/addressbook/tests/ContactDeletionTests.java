@@ -1,6 +1,5 @@
 package ru.stqua.pft.addressbook.tests;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class ContactDeletionTests extends TestBase {
@@ -11,7 +10,6 @@ public class ContactDeletionTests extends TestBase {
     app.getContactHelper().selectContact();
     app.getContactHelper().deleteContact();
     app.getContactHelper().acceptAllert();
- //   app.acceptNextAlert=true;
     app.getContactHelper().goToHomePage();
   }
 }
