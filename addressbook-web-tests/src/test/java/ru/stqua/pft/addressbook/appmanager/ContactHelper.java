@@ -53,4 +53,7 @@ public class ContactHelper extends HelperBase {
     driver.findElement(By.cssSelector(".center:nth-child(8) img")).click();
   }
 
+  public void submitContactModification() {
+    click(By.name("update"));
+  }
 }
