@@ -12,7 +12,7 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().selectContact();
     app.getContactHelper().initContactModification();
     app.getContactHelper().fillContactForm(new ContactData("Vashman","Ivanovich",
-            "Alloha", "MoRGan","Peer","Condor Systems","Metrostroevtsev 5"));
+            "Alloha", "MoRGan","Peer","Condor Systems","Metrostroevtsev 5", null),false);
     app.getContactHelper().fillPhonedata(new PhoneContactData("(812) 344-55-13",
             "8-914-548-55-18",
             "8-812-555-55-11",

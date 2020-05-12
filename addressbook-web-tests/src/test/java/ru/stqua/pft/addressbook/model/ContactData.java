@@ -10,11 +10,12 @@ public class ContactData {
   private final String title;
   private final String company;
   private final String address;
- // private final PhoneContactData phoneContactData;
+  private String group;
+  // private final PhoneContactData phoneContactData;
 
 
   public ContactData(String last_name, String midlle_name,String first_name ,String nick_name,
-                     String title, String company, String address
+                     String title, String company, String address, String group
                   //   String home_telephone, String mobile_phone, String work_phone, String fax
                     )
   {
@@ -28,6 +29,7 @@ public class ContactData {
     this.company = company;
     this.address = address;
 
+    this.group = group;
   }
 
 
@@ -53,6 +55,5 @@ public class ContactData {
   public String getAddress() {
     return address;
   }
-
-
+  public String getGroup() {return group; }
 }
