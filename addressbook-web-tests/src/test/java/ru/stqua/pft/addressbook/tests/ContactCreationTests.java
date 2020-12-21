@@ -9,7 +9,7 @@ import ru.stqua.pft.addressbook.model.PhoneContactData;
 
 public class ContactCreationTests extends TestBase {
   @Test
-  public void testGroupCreation() throws Exception {
+  public void testContactCreation() throws Exception {
 
 
     app.getContactHelper().initContactCreation();

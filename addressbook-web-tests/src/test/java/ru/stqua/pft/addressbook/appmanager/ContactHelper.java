@@ -64,10 +64,18 @@ public class ContactHelper extends HelperBase {
     //
 
     public void initContactModification () {
-      driver.findElement(By.cssSelector(".center:nth-child(8) img")).click();
+     // driver.findElement(By.cssSelector(".center:nth-child(8) img")).click();
+      driver.findElement(By.xpath("//img[@alt='Edit']")).click();
+      //click(By.name("edit"));
     }
 
     public void submitContactModification () {
       click(By.name("update"));
     }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//img[@alt='Edit']"));
+
   }
+
+}
