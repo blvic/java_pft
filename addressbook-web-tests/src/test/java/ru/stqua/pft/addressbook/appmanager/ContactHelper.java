@@ -78,4 +78,12 @@ public class ContactHelper extends HelperBase {
 
   }
 
+  public void CreateContactIfNotPresent() {
+    initContactCreation();
+    fillContactForm(new ContactData("Tester","Testovich",
+            "Test","CreateNotPresent", "DUMMY", "SelfImprove", "FA4", "test1"), true);
+    fillPhonedata( new PhoneContactData("34-97-52","8-911-170-61-15",
+            "888-77-88", "888-99-88"));
+    submitContactCreation();
+  }
 }
